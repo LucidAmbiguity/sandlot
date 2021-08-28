@@ -31,6 +31,7 @@ FAdded Controllers for assign roles and permissions. for finer control.
 clean up controller logic
 
 Attach Blog Project to extend Demo Capabilities.
+added a footer section to the base layout
 
 -   ### show user needs more detail and conroller tweaking
 -   ### Posts section needs building out

@@ -12,11 +12,11 @@
                     Welcome To Lucid Ambiguity
 
                     <div class="...">
-                        <div class=""  >
-                            <p class="even:bg-gray-400">10</p>
-                            <p class="even:bg-gray-400">20</p>
-                            <p class="even:bg-gray-400">30</p>
-                            <p class="even:bg-gray-400">40</p>
+                         <div class="mt-4"  >
+                            <p class="even:bg-gray-300 py-2">fuga et. Fugit, saepe labore! Aliquid, id?</p>
+                            <p class="even:bg-gray-300 py-2">reiciendis minus minima ipsam recusandae </p>
+                            <p class="even:bg-gray-300 py-2">quae ea culpa magnam repellat commodi saepe </p>
+                            <p class="even:bg-gray-300 py-2">Lorem ipsum dolor sit amet consectetur adipisicing </p>
                         </div>
 
                     </div>
