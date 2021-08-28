@@ -27,6 +27,7 @@ and Laravel Standards of passing objects around.
 
 Update user works for manage-users
 updated quick start
+FAdded Controllers for assign roles and permissions. for finer control.
 
 # show user needs more detail
 
