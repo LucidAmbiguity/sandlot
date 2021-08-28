@@ -11,14 +11,14 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
 
-                    <div class="...">
-                        <div  >
-                            <p class="even:bg-gray-400">10</p>
-                            <p class="even:bg-gray-400">20</p>
-                            <p class="even:bg-gray-400">30</p>
-                            <p class="even:bg-gray-400">40</p>
+
+                        <div class="mt-4"  >
+                            <p class="even:bg-gray-300 py-2">Lorem ipsum dolor sit amet, consectetur </p>
+                            <p class="even:bg-gray-300 py-2">Lorem ipsum dolor sit amet, consectetur </p>
+                            <p class="even:bg-gray-300 py-2">Lorem ipsum dolor sit amet, consectetur </p>
+                            <p class="even:bg-gray-300 py-2">Lorem ipsum dolor sit amet, consectetur </p>
                         </div>
-                    </div>
+
 
                 </div>
             </div>

@@ -14,10 +14,19 @@ This package will extend [spatie/laravel-permission](https://github.com/spatie/l
 -   Admin Panel
 -   Add\Remove\Edit Roles
 -   Add\Remove\Edit Permissions
+-   Add\Remove\Edit Users
 
 ## Using Sandlot
 
 [RTFM](https://github.com/LucidAmbiguity/sandlot/tree/master/Docs)
+
+## Screenshots
+
+![Dashboard](/Docs/images/dashboardSuperAdmin.PNG)
+
+![Permissions View](/Docs/images/permissionsSuperAdmin.PNG)
+
+![Permission Individual View](/Docs/images/permissions-showSuperAdmin.PNG)
 
 ## Lucid Ambiguity / Sandlot SPONSORS
 
