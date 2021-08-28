@@ -28,8 +28,12 @@ and Laravel Standards of passing objects around.
 Update user works for manage-users
 updated quick start
 FAdded Controllers for assign roles and permissions. for finer control.
+clean up controller logic
 
-# show user needs more detail
+Attach Blog Project to extend Demo Capabilities.
+
+-   ### show user needs more detail and conroller tweaking
+-   ### Posts section needs building out
 
 ## Components
 
