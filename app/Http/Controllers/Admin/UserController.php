@@ -80,7 +80,7 @@ class UserController extends Controller
         $permissionsDirect = $user->getDirectPermissions();
         $permissionsRoles = $user->getPermissionsViaRoles();
         $permissionsAll = $user->getAllPermissions();
-        $roles = $user->getRoleNames();
+        $roles = $user->roles;
         // dd($roles);
         return view('admin.users.show', [
             'user' => $user,

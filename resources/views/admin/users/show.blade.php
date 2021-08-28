@@ -10,59 +10,89 @@
             <div class="bg-gray-200 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="mb-4">
-                        <h1>Roles</h1>
+                        <div>
+                            <h1>Roles</h1>
+                        <p class="bg-blue-200">User has <strong>{{$roles->pluck('name')}}</strong></p>
+                        <div class="my-4">
+                            <ul>
+                            @forelse ($roles as $role)
+                                <li class="mr-1 bg-gray-100 even:bg-gray-300 flex justify-between items-center">
+                                  {{$role->name}}
+                                    <x-removeRoleUser-button class="flex-1 text-right" :disabled="auth()->user()->cannot('manage-roles')" :id="$role->id" :user="$user->id" route="assignRole"/>
+                                </li>
 
-                        @foreach ($roles as $role)
-                            <form action="{{route('roles.destroy' ,$user->id)}}" method="POST" class="mr-1">
-                                @csrf
-                                @method('delete')
-                                <div class="flex justify-between">
-                                    {{$role}} <x-button class="ml-4"> {{ __('Delete') }}</x-button>
-                                </div>
-                            </form>
-                        @endforeach
+                            @empty
+                                <li class="mr-1 bg-gray-100"> This Permission is Not Assigned </li>
+                            @endforelse
+                            </ul>
+                        </div>
+
+
+
+
                     </div>
                     <div class="mb-4">
 
                         <h1>Permissions Direct</h1>
+                        <div>
+                            <p class="bg-blue-200">User has <strong>{{$permDirect->pluck('name')}}</strong> permission From Direct Assignment</p>
+                            <div class="my-4">
+                                <ul>
+                                @forelse ($permDirect as $perm)
+                                    <li class="mr-1 bg-gray-100 even:bg-gray-300 flex justify-between items-center">
+                                        {{$perm->name}}
+                                        <x-removeRoleUser-button class="flex-1 text-right" :disabled="auth()->user()->cannot('manage-permissions')" :id="$perm->id" :user="$user->id" route="givePermissionToUser"/>
+                                    </li>
 
-                        @foreach ($permDirect as $permission)
-                            <form action="{{route('permissions.destroy' ,$user->id)}}" method="POST" class="mr-1">
-                                @csrf
-                                @method('delete')
-                                <div class="flex justify-between">
-                                    {{$permission->name}} <x-button class="ml-4"> {{ __('Delete') }}</x-button>
-                                </div>
-                            </form>
-                        @endforeach
+                                @empty
+                                    <li class="mr-1 bg-gray-100"> This Permission is Not Assigned </li>
+                                @endforelse
+                                </ul>
+                         </div>
+
+
+
                     </div>
                     <div class="mb-4">
 
                         <h1>Permissions Roles</h1>
 
-                        @foreach ($permRoles as $permission)
-                            <form action="{{route('permissions.destroy' ,$user->id)}}" method="POST" class="mr-1">
-                                @csrf
-                                @method('delete')
-                                <div class="flex justify-between">
-                                    {{$permission->name}} <x-button class="ml-4"> {{ __('Delete') }}</x-button>
-                                </div>
-                            </form>
-                        @endforeach
+                       <div>
+                            <p class="bg-blue-200">User has <strong>{{$permRoles->pluck('name')}}</strong> permission From Role Assignment</p>
+                            <div class="my-4">
+                                <ul>
+                                @forelse ($permRoles as $perm)
+                                    <li class="mr-1 bg-gray-100 even:bg-gray-300 flex justify-between items-center">
+                                        {{$perm->name}}
+                                        <x-removeRoleUser-button class="flex-1 text-right" :disabled="'true'" :id="$perm->id" :user="$user->id" route="givePermissionToUser"/>
+                                    </li>
+
+                                @empty
+                                    <li class="mr-1 bg-gray-100"> This Permission is Not Assigned </li>
+                                @endforelse
+                                </ul>
+                         </div>
                     </div>
                      <div class="mb-4">
 
                         <h1>Permissions All</h1>
 
-                        @foreach ($permAll as $permission)
-                            <form action="{{route('permissions.destroy' ,$user->id)}}" method="POST" class="mr-1">
-                                @csrf
-                                @method('delete')
-                                <div class="flex justify-between">
-                                    {{$permission->name}} <x-button class="ml-4"> {{ __('Delete') }}</x-button>
-                                </div>
-                            </form>
-                        @endforeach
+                        <div>
+                            <p class="bg-blue-200">User has <strong>{{$permRoles->pluck('name')}}</strong> permissions in total</p>
+                            <div class="my-4">
+                                <ul>
+                                @forelse ($permAll as $perm)
+                                    <li class="mr-1 bg-gray-100 even:bg-gray-300 flex justify-between items-center">
+                                        {{$perm->name}}
+                                        <x-removeRoleUser-button class="flex-1 text-right" :disabled="'true'" :id="$perm->id" :user="$user->id" route="givePermissionToUser"/>
+                                    </li>
+
+                                @empty
+                                    <li class="mr-1 bg-gray-100"> This Permission is Not Assigned </li>
+                                @endforelse
+                                </ul>
+                            </div>
+                         </div>
                     </div>
 
 

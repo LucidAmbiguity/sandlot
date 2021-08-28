@@ -33,8 +33,10 @@ clean up controller logic
 Attach Blog Project to extend Demo Capabilities.
 added a footer section to the base layout
 
--   ### show user needs more detail and conroller tweaking
+-   ### ~~show user needs more detail and controller tweaking~~
 -   ### Posts section needs building out
+
+Tweaked user page. Now removes role from user not from system. :)
 
 ## Components
 
