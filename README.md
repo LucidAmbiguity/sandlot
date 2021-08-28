@@ -17,7 +17,7 @@ This package will extend [spatie/laravel-permission](https://github.com/spatie/l
 
 ## Using Sandlot
 
-[RTFM](https://github.com/veinhugain/sandlot/tree/master/Docs)
+[RTFM](https://github.com/LucidAmbiguity/sandlot/tree/master/Docs)
 
 ## Lucid Ambiguity / Sandlot SPONSORS
 
@@ -30,7 +30,7 @@ We would like to extend our thanks to the following sponsors for funding Lucid A
 
 ## Contributing
 
-Thank you for considering contributing to the Sandlot Project! The contribution guide can be found in the [Sandlot documentation](https://github.com/veinhugain/sandlot#readme).
+Thank you for considering contributing to the Sandlot Project! The contribution guide can be found in the [Sandlot documentation](https://github.com/LucidAmbiguity/sandlot#readme).
 
 ## Code of Conduct
 
