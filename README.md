@@ -47,7 +47,7 @@ In order to ensure that the Sandlot community is welcoming to all, please review
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Sandlot, please send an e-mail to Taylor Otwell via [jsrutty+gitsandot@gmail.com.com](mailto:jsrutty+gitsandot@gmail.com.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Sandlot, please send an e-mail to Taylor Otwell via [jsrutty+gitsandot@gmail.com.com](mailto:jsrutty+gitsandlot@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
