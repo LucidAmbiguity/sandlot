@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\GivePermissionToUserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Pages\PagesController;
+use App\Http\Controllers\Posts\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/about', [PagesController::class, 'about'])->name('about');
-
+Route::get('/services', [PagesController::class, 'services'])->name('about');
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::middleware(['auth'])->group(function () {
     // dd('in group');
     Route::resource('admin/roles', RoleController::class);
