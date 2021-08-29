@@ -1,33 +1,30 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Tasks') }}
+        </h2>
+    </x-slot>
 
-@section('content')
-
-        <h1>{{$title }}  </h1>
-
+    <x-post>
+            <x-card :post="$post"/>
 
 
-            <h2>Posts</h2>
-            @if (count($posts)>0)
-                @foreach ($posts as $post)
-                    <div class="card bg-secondary card-body">
-                        <h3>
-                             <a href="/posts/{{$post->id}}">{{$post->title}}</a>
-                         </h3>
-                        <small>Written on {{$post->created_at}} by {{$post->user->name}} </small>
+                @if (Auth::user()->id === $post->user_id)
+                    <div class="container " >
+                        <a class="btn btn-primary " href="/posts/{{$post->id}}/edit" role="button">Edit</a>
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="float-right">
+                            @csrf
+                            @method('delete')
+                            <x-button class="ml-4 btn btn-danger"> {{ __('Delete') }}</x-button>
+                        </form>
+
                     </div>
-                @endforeach
-               <div width="100px"> {{$posts->links('pagination::bootstrap-4')}}</div>
-            @else
-                <p>No Posts Found</p>
-            @endif
+                @endif
 
 
+            <div class="container pt-5 ">
+                <a class="btn btn-success " href="/posts" role="button">POSTS</a>
+            </div>
+    </x-post>
 
-
-
-        <p>
-            <a class="btn btn-primary btn-lg" href="posts/create" role="button">create</a>
-            <a class="btn btn-success btn-lg" href="/register" role="button">Register</a></p>
-
-
-@endsection
+</x-app-layout>

@@ -11,7 +11,9 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        // $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth')->except(['index', 'show']);
+        // $this->authorizeResource('post');
     }
     /**
      * Display a listing of the resource.
@@ -21,14 +23,14 @@ class PostController extends Controller
     public function index()
     {
 
-        dd('posts.index');
+
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
 
         $data = [
             'title' => 'The Posts Section',
             'posts' => $posts
         ];
-
+        // dd($posts);
         return view('posts.index')->with($data);
     }
 
