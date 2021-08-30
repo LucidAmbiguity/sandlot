@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
-use App\Policies\RolePolicy;
+use App\Models\Post;
+use App\Policies\PostPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-use Spatie\Permission\Contracts\Role;
+
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
-
+        Post::class => PostPolicy::class,
     ];
 
     /**
@@ -34,6 +35,7 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
         });
+        // Gate::resource('posts', 'App\Policies\PostPolicy');
 
 
         // Gate::define('test', fn ($user) =>  $user->hasPermission('manage-roles') ? true : null);

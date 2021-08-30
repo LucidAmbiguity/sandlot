@@ -43,6 +43,14 @@ Roles And permissions looks stable
 Posts section framed and seeded.
 next to tweek
 
+Posts Section Tweaked - full crud - guests view index and show - auth() users can create - post owner can edit - post owner can delete - admin can edit/delete any post - Has ~30 test all passing - Super Admin Can Do It All
+
+Next for Posts - is Comments from members - is Likes from members // use Soft Delete here to avoid spamming - profile pics - images in posts
+
+Try to keep up with Testing.
+
+Finer
+
 ## Components
 
 delete-item : form element with delete button needs:

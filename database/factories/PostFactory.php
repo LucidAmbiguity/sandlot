@@ -27,6 +27,7 @@ class PostFactory extends Factory
             'user_id' => $user, //User::factory(),
             'title' => $this->faker->realText(25, 3),
             'body' => $this->faker->realText(100, 3),
+            'published' => $this->faker->numberBetween(0, 1),
         ];
     }
 }

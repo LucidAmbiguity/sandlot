@@ -29,10 +29,10 @@
     }
     </style>
 
-<div class="bg-white max-w-xl rounded-2xl my-2 px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
+<div class="container bg-white max-w-xl rounded-2xl my-2 px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500 mx-auto">
     <div class="mt-4">
         <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h1>
-        <p class="mt-4 text-md text-gray-600">{{$post->body}}</p>
+        <p class="mt-4 text-md text-gray-600">{!! $post->body !!}</p>
         <div class="flex justify-between items-center">
             <div class="mt-4 flex items-center space-x-4 py-6">
                 <div class="">

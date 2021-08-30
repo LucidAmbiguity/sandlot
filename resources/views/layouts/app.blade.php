@@ -26,6 +26,7 @@
                     {{ $header }}
                 </div>
             </header>
+            <x-messages />
 
             <!-- Page Content -->
             <main>

@@ -13,7 +13,7 @@ class PostController extends Controller
     {
         // $this->middleware('auth', ['except' => ['index', 'show']]);
         $this->middleware('auth')->except(['index', 'show']);
-        // $this->authorizeResource('post');
+        $this->authorizeResource(Post::class);
     }
     /**
      * Display a listing of the resource.
@@ -52,6 +52,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required'
@@ -62,6 +63,7 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->user_id = auth()->user()->id;
+        $post->published = rand(0, 1); // dev crutch should default to false. maybe with an option
         $post->save();
 
         return redirect('/posts')->with('success', 'Post created');
@@ -73,9 +75,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::find($id);
+        // $post = Post::find($id);
         return view('posts.show')->with('post', $post);
     }
 
@@ -85,13 +87,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        $post = Post::find($id);
+        // $post = Post::find($id);
         //check for correct user
-        if (auth()->user()->id !== $post->user_id) {
-            return redirect('posts')->with('error', 'Unauthorized Page');
-        }
+        // if (auth()->user()->id !== $post->user_id) {
+        //     return redirect('posts')->with('error', 'Unauthorized Page');
+        // }
 
         return view('posts.edit')->with('post', $post);
     }
@@ -103,7 +105,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
         $this->validate($request, [
             'title' => 'required',
@@ -111,7 +113,7 @@ class PostController extends Controller
         ]);
 
         //Update PosT
-        $post = Post::find($id);
+
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();
@@ -125,9 +127,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        $post = Post::find($id);
+
         $post->delete();
         return redirect('/posts')->with('success', 'Post removed');
     }
